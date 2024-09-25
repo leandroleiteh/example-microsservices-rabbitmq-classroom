@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway-aula-ms
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: create_student_route
+          uri: http://localhost:8081
+          predicates:
+            - Path=/createStudent
+          filters:
+            - StripPrefix=1
+            - AddResponseHeader=Access-Control-Allow-Origin, http://127.0.0.1:5500
+            - AddResponseHeader=Access-Control-Allow-Methods, POST
+            - AddResponseHeader=Access-Control-Allow-Headers, Content-Type
+            - AddResponseHeader=Access-Control-Allow-Credentials, true
+        - id: get_students_route
+          uri: http://localhost:8084
+          predicates:
+            - Path=/get-resources-student/get/allStudents
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 30
