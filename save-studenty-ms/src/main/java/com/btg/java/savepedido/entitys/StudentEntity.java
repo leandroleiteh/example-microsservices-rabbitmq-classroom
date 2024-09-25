@@ -1,12 +1,11 @@
 package com.btg.java.savepedido.entitys;
 
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.UUID;
 
-@Document(collection = "tb_student")
+@Document(collection = "student_tb")
 public class StudentEntity {
 
     @MongoId

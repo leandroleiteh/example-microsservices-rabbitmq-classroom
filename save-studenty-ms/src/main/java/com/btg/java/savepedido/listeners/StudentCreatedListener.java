@@ -1,6 +1,6 @@
 package com.btg.java.savepedido.listeners;
 
-import com.btg.java.savepedido.listeners.dto.StudentyCreateListenerDto;
+import com.btg.java.savepedido.listeners.dto.StudentCreateListenerDto;
 import com.btg.java.savepedido.services.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +23,7 @@ public class StudentCreatedListener {
     }
 
     @RabbitListener(queues = STUDENT_CREATED_QUEUE)
-    public void listen(@Payload Message<StudentyCreateListenerDto> message) {
+    public void listen(@Payload Message<StudentCreateListenerDto> message) {
         logger.info("Message consumed: {}", message);
 
         studentService.saveStudenty(message.getPayload());
