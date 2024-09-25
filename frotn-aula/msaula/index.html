@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro de Estudante</title>
+    <link rel="stylesheet" href="syles.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h2>Cadastro de Estudante</h2>
+            <form id="studentForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar campos</button>
+                <button id="fetchStudentsBtn" type="button">Buscar Estudantes</button>
+            </form>
+            <div id="message"></div>
+        </div>
+        
+        <iframe class="embed-iframe" width="700" height="450" src="https://whimsical.com/embed/54dMdcaaRBu7u3PpCE6Sao"></iframe>
+    </div>
+
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Conteúdo será preenchido dinamicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
