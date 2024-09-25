@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 import static com.btg.java.newordemscreated.configs.RabitMqConfig.STUDENT_CREATED_QUEUE;
 
 @Service
-public class NewStudentyService {
+public class NewStudentService {
 
-    private static final Logger logger = LoggerFactory.getLogger(NewStudentyService.class);
+    private static final Logger logger = LoggerFactory.getLogger(NewStudentService.class);
 
 
     private static RabbitTemplate rabbitTemplate;
 
-    public NewStudentyService(RabbitTemplate rabbitTemplate) {
+    public NewStudentService(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 

@@ -1,7 +1,7 @@
 package com.btg.java.newordemscreated.controllers;
 
 import com.btg.java.newordemscreated.dto.StudentNewDto;
-import com.btg.java.newordemscreated.services.NewStudentyService;
+import com.btg.java.newordemscreated.services.NewStudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
-public class NewStudentyController {
+public class NewStudentController {
 
-    private NewStudentyService newStudentyService;
+    private final NewStudentService newStudentService;
 
-    public NewStudentyController(NewStudentyService newStudentyService) {
-        this.newStudentyService = newStudentyService;
+    public NewStudentController(NewStudentService newStudentService) {
+        this.newStudentService = newStudentService;
     }
 
 
-    @PostMapping("/createStudenty")
+    @PostMapping("/createStudent")
     public ResponseEntity<StudentNewDto> create(@RequestBody StudentNewDto studentNewDto) {
-        return ResponseEntity.ok(newStudentyService.createStudenty(studentNewDto));
+        return ResponseEntity.ok(newStudentService.createStudenty(studentNewDto));
     }
 }

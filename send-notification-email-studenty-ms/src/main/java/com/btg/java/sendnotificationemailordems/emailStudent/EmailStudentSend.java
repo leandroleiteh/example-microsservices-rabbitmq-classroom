@@ -1,6 +1,6 @@
-package com.btg.java.sendnotificationemailordems.emailStudenty;
+package com.btg.java.sendnotificationemailordems.emailStudent;
 
-import com.btg.java.sendnotificationemailordems.listeners.dto.StudentyCreateListenerDto;
+import com.btg.java.sendnotificationemailordems.listeners.dto.StudentCreateListenerDto;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,11 +10,11 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EmailStudentySend {
+public class EmailStudentSend {
 
     private final JavaMailSender emailSender;
 
-    public EmailStudentySend(JavaMailSender emailSender) {
+    public EmailStudentSend(JavaMailSender emailSender) {
         this.emailSender = emailSender;
     }
 
@@ -24,11 +24,11 @@ public class EmailStudentySend {
     public static final String UTF_8_ENCODING = "UTF-8";
 
     @Async
-    public void sendEmailNewTransactionDeposit(StudentyCreateListenerDto listenerDto) {
+    public void sendEmailNewTransactionDeposit(StudentCreateListenerDto listenerDto) {
         sendEmailStudent(listenerDto);
     }
 
-    private void sendEmailStudent(StudentyCreateListenerDto listenerDto) {
+    private void sendEmailStudent(StudentCreateListenerDto listenerDto) {
         try {
 
             String text = "Olá " + listenerDto.name() +", seu cadastro foi concluído com sucesso!";

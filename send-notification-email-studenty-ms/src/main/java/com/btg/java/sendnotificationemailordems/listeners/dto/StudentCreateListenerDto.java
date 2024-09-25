@@ -1,6 +1,6 @@
 package com.btg.java.sendnotificationemailordems.listeners.dto;
 
-public record StudentyCreateListenerDto(
+public record StudentCreateListenerDto(
 
         String name,
         String email
