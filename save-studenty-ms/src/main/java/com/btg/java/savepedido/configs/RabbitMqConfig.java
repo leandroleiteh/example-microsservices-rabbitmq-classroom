@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMqConfig {
-    public static final String STUDENT_CREATED_QUEUE = "ms-recebe-pedido";
+    public static final String STUDENT_CREATED_QUEUE = "ms-student-created";
 
     @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter(){

@@ -19,7 +19,7 @@ public class RabitMqConfig {
         @Value("${spring.rabbitmq.addressess}")
         private String rabbitMqAddresses;
 
-        public static final String STUDENT_CREATED_QUEUE = "ms-recebe-pedido";
+        public static final String STUDENT_CREATED_QUEUE = "ms-student-created";
 
 
         @Bean
